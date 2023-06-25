@@ -8,11 +8,11 @@ The repo currently contains: Generated audio samples using both the unconditiona
 
 **On The Uploaded Samples**
 
-Generated samples have been uploaded, in .wav format, for both *unconditional* and *conditional* cases, in the respective folders. Since our models were trained using the Lakh MIDI dataset, the multi-track pieces generated contain tracks for bass, drums, guitar, piano and strings. To convert the generated pianorolls to .wav files,[pypianoroll](https://github.com/salu133445/pypianoroll) was used to get MIDI files as an intermediate representation, and the MIDI files were converted to .wav files using [timidity++](https://timidity.sourceforge.net/).
+Generated samples have been uploaded, in .wav format, for both *unconditional* and *conditional* cases, in the respective folders. Since our models were trained using the Lakh MIDI dataset, the multi-track pieces generated contain tracks for bass, drums, guitar, piano and strings. To convert the generated pianorolls to .wav files, [pypianoroll](https://github.com/salu133445/pypianoroll) was used to get MIDI files as an intermediate representation, and the MIDI files were converted to .wav files using [timidity++](https://timidity.sourceforge.net/).
 
 The unconditional folder contains generated music tracks with all 5 instruments.
 
-The conditional folder contains ground-truth single-instrument tracks, as well as the respective generated accompaniments, for 2 conditional instruments: piano and guitar, and 4 different training configuration for each conditional case:
+The conditional folder contains ground-truth single-instrument tracks, as well as the respective generated accompaniments, for 2 conditional instruments: piano and guitar (in the conditions subfolder), and 4 different training configuration for each conditional case:
 
 i) global: Only one global discriminator was used, and the conditional embedding encoder was trained jointly with the discriminator.
 
@@ -20,7 +20,7 @@ ii) global_ae: Only one global discriminator was used, but the conditional embed
 
 iii) global_local: Two discriminators, one global (for the whole multi-track) and one local (for the generated accompaniment only) were used, whereas the conditional embedding encoder was trained jointly with the discriminator.
 
-iv) Two discriminators, one global (for the whole multi-track) and one local (for the generated accompaniment only) were used, whereas the conditional embedding encoder was trained separately, with a reconstruction loss objective.
+iv) global_local_ae: Two discriminators, one global (for the whole multi-track) and one local (for the generated accompaniment only) were used, whereas the conditional embedding encoder was trained separately, with a reconstruction loss objective.
 
 Code to be uploaded soon!
 
